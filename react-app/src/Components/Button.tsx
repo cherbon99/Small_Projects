@@ -1,13 +1,12 @@
-import React from "react";
-
-interface ButtonProps {
+interface Props {
   children: string;
   onClick: () => void;
+  color?: string;
 }
 
-const Button = ({ children, onClick }: ButtonProps) => {
+const Button = ({ children, color = "primary", onClick }: Props) => {
   return (
-    <button className="btn btn-dark" onClick={onClick}>
+    <button className={"btn btn-" + color} onClick={onClick}>
       {children}
     </button>
   );
