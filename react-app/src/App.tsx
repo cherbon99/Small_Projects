@@ -17,6 +17,8 @@ function App() {
       <Alert>
         Hello <span>World</span>
       </Alert>
+
+      <button onClick={() => console.log("Clicked")}>My Button</button>
     </div>
   );
 }
