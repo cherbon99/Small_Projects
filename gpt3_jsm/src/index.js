@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import App from './App';
+import './index.css';
 
 const container = document.getElementById('root'); // Get the root element
 const root = ReactDOM.createRoot(container); // Create a root
