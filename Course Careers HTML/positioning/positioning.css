@@ -1,5 +1,5 @@
 .container {
-    position: absolute;
+    position: styicky;
     top: 50px;
     background-color: green;
     height: 100px;
