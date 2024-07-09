@@ -1,13 +1,10 @@
-const str = "hi earth my name is chris"
-const freq = new Map();
+const x = 2
 
-for(const char of str){
-   if( freq.has(char)){
-      freq.set(char, freq.get(char) + 1)
-   }else {
-      freq.set(char, 1);
-   }
+try{
+   x.toUpperCase();
+
+} catch (err){
+   console.log("oof" , err.messagem, err.name);
+} finally{
+   console.log("jeez you finally ended");
 }
-
-console.log(freq);
-
