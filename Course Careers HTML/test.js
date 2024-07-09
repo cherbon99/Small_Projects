@@ -1,13 +1,13 @@
-const arr = [1,1,1,2,3,5,8,9,4,5];
-const numbers = new Set();
+const str = "hi earth my name is chris"
+const freq = new Map();
 
-for(const value of arr){
-   if (numbers.has(value)){
-    console.log("gotcha ya filthy duplicate", value)
+for(const char of str){
+   if( freq.has(char)){
+      freq.set(char, freq.get(char) + 1)
+   }else {
+      freq.set(char, 1);
    }
-   numbers.add(value);
 }
 
-
-
+console.log(freq);
 
