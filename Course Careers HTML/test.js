@@ -1,10 +1,11 @@
-const x = 2
+const person = {
+   name: "chris",
+   lastName: "Herbon",
+   getName: function() {
+      console.log(this.name + this.lastName)
+   }
+}
 
-try{
-   x.toUpperCase();
-
-} catch (err){
-   console.log("oof" , err.messagem, err.name);
-} finally{
-   console.log("jeez you finally ended");
+function test() {
+   console.log("test");
 }
