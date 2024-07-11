@@ -4,10 +4,14 @@
     <title>Document</title>
 </head>
     <body>
-        <input type="text" id="username" placeholder="username" onChange="enterUsername(this)"/>
+        <p>try to guess a random number between 1 - 100.</p>
+        <label for=" guess">Guess:</label>
+        <input id="guess" type="number"/>
+        <button onclick="makeGuess()">Make Guess</button>
+        <p>number of guesses: <span id="num-guesses">0</span></p>
+        <p id="feedback"></p>
+
        
-        <p id="text"></p>
-        <ul id = list></ul>
         <script src="test.js"></script>
     </body>
 </html>
