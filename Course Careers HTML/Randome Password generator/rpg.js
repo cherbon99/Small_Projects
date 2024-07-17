@@ -56,11 +56,15 @@ function getPasswordLength(){
     
         if(characters.length === 0){
           return alert("Select one property");
+
+          
+      }
+      if(length === 0){
+        return alert("Select password length");
       }
     
       let pwd = [];
       for (let i = 0; i < length; i++){
-        console.log("test")
               const randomIdx =Math.floor(Math.random() * characters.length);
           const char = characters[randomIdx];
           pwd.push(char);
@@ -69,5 +73,4 @@ function getPasswordLength(){
       const pwdString = pwd.join("");
         document.getElementById("password").innerHTML = "<p>" + pwdString + "</p>";
       
-      console.log(pwdString);
     }
