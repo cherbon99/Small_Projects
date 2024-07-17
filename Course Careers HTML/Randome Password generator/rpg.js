@@ -66,7 +66,7 @@ function getPasswordLength(){
           pwd.push(char);
           
       }
-      const pwdString = pwd.join("")
+      const pwdString = pwd.join("");
         document.getElementById("password").innerHTML = "<p>" + pwdString + "</p>";
       
       console.log(pwdString);
