@@ -1,29 +1,22 @@
-class Teacher{
+class Person{
     name;
-    age;
-    #salary;
+    static numberOfPeople = 0;
 
-    constructor(name, age, salary){
+    constructor(name){
         this.name = name;
-        this.age = age;
-        this.#salary = salary;
+        Person.numberOfPeople++;
     }
 
-
-    getSalary(){
-        return this.#salary;
+    static getNumberOfPeople(){
+        return this.numberOfPeople;
     }
-    setSalary(newSalary){
-        if (newSalary <= 0){
-            throw Error("invalid amount, must be above 0")
-        }
-        this.#salary = newSalary
+
+    static removePerson(){
+        this.numberOfPeople--;
     }
 }
 
-const teacher = new Teacher("chris" , 25, 60000);
-const teacher1 = new Teacher("kylie" , 25, 65000);
-
-
-teacher.setSalary(1000);
-console.log(teacher.getSalary());
+const p = new Person("chris");
+const p2 = new Person("chris also");
+Person.removePerson();
+console.log(Person.getNumberOfPeople())
