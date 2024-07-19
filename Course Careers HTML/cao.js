@@ -1,22 +1,40 @@
 class Person{
     name;
-    static numberOfPeople = 0;
+    age;
 
-    constructor(name){
+    constructor(name, age){
         this.name = name;
-        Person.numberOfPeople++;
+        this.age = age;
     }
 
-    static getNumberOfPeople(){
-        return this.numberOfPeople;
-    }
+   greet() {
+    return this.name, " ", this.age;
+   }
+}
 
-    static removePerson(){
-        this.numberOfPeople--;
+class Teacher extends Person{
+    course;
+
+    constructor(name, age, course){
+        super(name, age);
+        this.course = course;
+    }
+    greet() {
+        return "I am the teacher";
+       }
+}
+
+
+
+class Student extends Person{
+    group;
+
+    constructor(name, age, group){
+        super(name, age);
+        this.group = group;
     }
 }
 
-const p = new Person("chris");
-const p2 = new Person("chris also");
-Person.removePerson();
-console.log(Person.getNumberOfPeople())
+const s1 = new Student("chris", 24, "Games")
+const t1 = new Teacher("bruh" , 35, "storycrafting")
+console.log(s1.greet());
