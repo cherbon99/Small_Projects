@@ -1,18 +1,29 @@
-class Person{
+class Teacher{
     name;
     age;
+    #salary;
 
-    constructor(name, age){
+    constructor(name, age, salary){
         this.name = name;
         this.age = age;
+        this.#salary = salary;
     }
 
-    sayHi(){
-        console.log(`hi computer, I am ${this.name} and I am ${this.age} years old`);
+
+    getSalary(){
+        return this.#salary;
+    }
+    setSalary(newSalary){
+        if (newSalary <= 0){
+            throw Error("invalid amount, must be above 0")
+        }
+        this.#salary = newSalary
     }
 }
 
-const person = new Person("chris" , 25);
-const person1 = new Person("kylie" , 25);
-person.sayHi();
-person1.sayHi();
+const teacher = new Teacher("chris" , 25, 60000);
+const teacher1 = new Teacher("kylie" , 25, 65000);
+
+
+teacher.setSalary(1000);
+console.log(teacher.getSalary());
