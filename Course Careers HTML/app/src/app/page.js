@@ -1,26 +1,20 @@
+"use client";
 import { Post } from "@/components/Post";
+import { useState } from "react";
 
 export default function Home() {
-  const post = [
-    {
-      title: "Speed Tour",
-      author: "Chris",
-      content: "THIS IS A GARAGE",
-      following: false,
-    },
-    {
-      title: "Speed Tour",
-      author: "Chris",
-      content: "MOST HOUSES HAVE THESES",
-      following: false,
-    },
-  ];
+
+  const [count, setCount] = useState(0);
+
+  function onCount(){
+    setCount(count +1);
+  }
+
 
   return (
     <>
-      {post.map((content, idx) => {
-        return <Post {...content} key={idx + Math.random()} />;
-      })}
+      <p>{count}</p>
+      <button onClick={onCount}>Count Up!</button>
     </>
   );
 }
