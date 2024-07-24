@@ -1,58 +1,28 @@
 "use client";
-import { Post } from "@/components/Post";
-import { useState, useEffect} from "react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 export default function Home() {
-  const [content, setContent] = useState("");
-  const [author, setAuthor] = useState("");
-  const [title, setTitle] = useState("");
-  const [posts, setPosts] = useState([]);
+  const [userId, setUserId] = useState("");
+  const router = useRouter();
 
-  useEffect(() => { 
-    console.log("run")
-  }, [])
-
-  function addPost() {
-    const newPost = {
-      author: author,
-      content: content,
-      title: title,
-      following: false,
-    };
-    setPosts([...posts, newPost]);
-    setContent("");
-    setAuthor("");
-    setTitle("");
+  function navigate() {
+    router.push("/user/" + userId);
   }
-
   return (
-    <>
+    <div>
+      <Link href="/About/contact">Contact</Link>
+      <Link href="/About">About</Link>
       <div>
         <input
           type="text"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          placeholder="Title"
+          placeholder="user id"
+          value={userId}
+          onChange={(e) => setUserId(e.target.value)}
         />
-        <input
-          type="text"
-          value={content}
-          onChange={(e) => setContent(e.target.value)}
-          placeholder="Content"
-        />
-        <input
-          type="text"
-          value={author}
-          onChange={(e) => setAuthor(e.target.value)}
-          placeholder="Author"
-        />
-        <button onClick={addPost}>Add Post</button>
+        <button onClick={navigate}>Go to Profile</button>
       </div>
-      <div className="posts">
-        {posts.map((post, idx) => (
-          <Post {...post} key={idx + Math.random()} />
-        ))}
-      </div>
-    </>
+    </div>
   );
 }
