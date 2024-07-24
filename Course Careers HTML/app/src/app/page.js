@@ -1,12 +1,16 @@
 "use client";
 import { Post } from "@/components/Post";
-import { useState } from "react";
+import { useState, useEffect} from "react";
 
 export default function Home() {
   const [content, setContent] = useState("");
   const [author, setAuthor] = useState("");
   const [title, setTitle] = useState("");
   const [posts, setPosts] = useState([]);
+
+  useEffect(() => { 
+    console.log("run")
+  }, [])
 
   function addPost() {
     const newPost = {
