@@ -1,10 +1,17 @@
 let count = 0;
 
-function printToConsole() {
-  console.log("Button was clicked!");
+function addToCount() {
   count++;
   console.log(count);
 }
 
-const button = document.getElementById("countUp");
-button.addEventListener("click", printToConsole);
+function minusCount(){
+    count--;
+    console.log(count);
+}
+
+const buttonUp = document.getElementById("countUp");
+buttonUp.addEventListener("click", addToCount);
+
+const buttonDown = document.getElementById("countDown");
+buttonDown.addEventListener("click", minusCount);
