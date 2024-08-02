@@ -1,0 +1,11 @@
+.down {
+  flex: 1;
+  background-color: #8b0000;
+  color: white;
+}
+
+.up {
+    flex: 1;
+    background-color: hsl(133, 100%, 27%);
+    color: white;
+  }
