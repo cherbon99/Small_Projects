@@ -67,9 +67,20 @@ function dfs(array) {
 const path = dfs(maze);
 console.log(path);
 
+function printMaze(maze) {
+    let mazeString = "";
+    for (let i = 0; i < maze.length; i++) {
+      for (let j = 0; j < maze[i].length; j++) {
+        mazeString += maze[i][j] + "O";
+      }
+      mazeString += "\n";
+    }
+    console.log(mazeString);
+  }
+
 for (const pos of path) {
   const [y, x] = pos.split(",");
   maze[y][x] = "X";
 }
 
-console.log(maze);
+printMaze(maze);
