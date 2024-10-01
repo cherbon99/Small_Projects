@@ -26,7 +26,7 @@ func (ll *LinkedList[T]) index(idx uint) (T, bool) {
 
 	curIdx := 0
 	current := ll.head
-	for current != ll.head || current == 0 {
+	for current != ll.head || curIdx == 0 {
 		if idx == uint(curIdx) {
 			value = current.value
 			break
@@ -49,7 +49,7 @@ func (ll *LinkedList[T]) append(value T) {
 	}
 
 	node := &Node[T]{}
-	node.value := value
+	node.value = value
 
 	tail := ll.head.prev
 	tail.next = node
@@ -63,22 +63,39 @@ func (ll *LinkedList[T]) append(value T) {
 func (ll *LinkedList[T]) pop() T {
 	// remove and return the last value in the list
 
-	ll.lenght--
+	ll.length--
 	if ll.length == 0{
 		var null T
-		value := tail.prev
+		value := ll.head.value
 		ll.head.value = null
 		return value
 
 	}
+
+	tail := ll.head.prev
+	tailPrev := tail.prev
+	ll.head.prev = tailPrev
+	tailPrev.next = ll.head
+
+	return tail.value
 }
 
 func (ll *LinkedList[T]) printList() {
 // prints entire list
 
-for i, linkedList := range ll {
+	values := []T{}
 
-}
+	current := ll.head
+	for ll.length != 0 {
+		values = append(values, current.value)
+		current = current.next
+		if current == ll.head {
+			break
+		}
+	}
+	fmt.Println(values)
+
+
 }
 
 func main() {
@@ -92,7 +109,7 @@ func main() {
 	ll.append(9)
 
 	ll.printList()
-	fmt.PrintLn(ll.index(7))
+	fmt.Println(ll.index(7))
 	
 
 }
