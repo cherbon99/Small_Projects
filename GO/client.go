@@ -18,10 +18,10 @@ type book struct{
 const BASE_URL = "http://localhost:8080"
 
 func get(){
-	response, err := http.Get(BASE_URL + "/books/1")
+	response, err := http.Get(BASE_URL + "/books/4")
 
 	if err != nil {
-		fmt.Println(err.Error())
+		fmt.Println("test",err.Error())
 		return
 	}
 
@@ -41,7 +41,7 @@ func post(){
 	bodyBytes, err := json.Marshal(&postBody)
 	
 	if err != nil {
-		fmt.Println(err.Error())
+		fmt.Println( err.Error())
 		return
 	}
 	requestBody := bytes.NewReader(bodyBytes)
