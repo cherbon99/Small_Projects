@@ -50,11 +50,27 @@ type Deck struct {
 }
 
 func (d *Deck) deal(num uint) []Card {
+	dealtCards := []Card{}.
 
-	
+	for i := uint(0); i < num; i++{
+		card := d.cards
+		dealtCards = append(deltCards, card)
+		d.cards = d.cards[1:]
+	}
+
+	return dealtCards
+
 }
 
 func (d *Deck) create() {
+	// chooses number and suit
+
+	for i := 1; i <=13, i++{
+		for j :=1 i<=4, i++{
+			card:= Card(value: i, suit: j)
+			d.cards = append(d.cards, card)
+		}
+	}
 }
 
 func (d *Deck) shuffle() {
