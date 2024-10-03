@@ -84,6 +84,16 @@ type Game struct {
 }
 
 func (game *Game) dealStartingCards() {
+	//create
+	game.deck.create()
+	//shuffle
+	game.deck.shuffle()
+	//deal to dealer
+	game.dealerCards = game.deck.deal(2)
+	//deal to player
+	game.playerCards = game.deck.deal(2)
+
+	//print player had been dealt message
 
 }
 
